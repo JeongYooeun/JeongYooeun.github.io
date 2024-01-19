@@ -1,0 +1,243 @@
+:root {
+    --slot-size: 0.9px;
+}
+
+.slotMachine {
+    transition: transform 150ms ease-in-out, opacity 150ms ease-in-out 0ms;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    width: calc(300 * var(--slot-size));
+    height: calc(300 * var(--slot-size));
+    border-radius: 15px;
+}
+
+.slotMachineInstruction {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    width: calc(300 * var(--slot-size));
+    height: calc(300 * var(--slot-size));
+    border-radius: 15px;
+}
+
+.slotOuter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 50%;
+    border: calc(10 * var(--slot-size)) black solid;
+    border-radius: calc(30 * var(--slot-size));
+}
+
+.slotInner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    width: 87.5%;
+    height: 80%;
+    border: calc(8 * var(--slot-size)) black solid;
+    border-radius: calc(15 * var(--slot-size));
+}
+
+.slotNumbers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 85%;
+}
+
+.slotNumber {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    background: white;
+    margin-left: calc(3 * var(--slot-size));
+    margin-right: calc(3 * var(--slot-size));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slotNumber::after {
+    content: "🍒";
+    filter: grayscale();
+    display: block;
+    font-size: calc(30 * var(--slot-size));
+    font-weight: 900;
+}
+
+.slotHandle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+    height: 100%;
+    margin-left: calc(5 * var(--slot-size));
+}
+
+.slotMachine:hover {
+    transform: scale(1.05);
+}
+
+.slotMachine:hover .costNumber::before {
+    transform: rotate(360deg);
+}
+
+.disabledMachine:hover .costNumber::before {
+    transform: rotate(0deg);
+}
+
+.slotStick {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background: black;
+    width: 100%;
+    height: 25%;
+    border-radius: 0px calc(15 * var(--slot-size)) calc(15 * var(--slot-size)) 0px;
+}
+
+.slotBar {
+    background: black;
+    width: 40%;
+    height: 150%;
+    border: calc(3 * var(--slot-size)) white solid;
+    margin-bottom: 100%;
+    border-radius: calc(15 * var(--slot-size));
+}
+
+.barMoving {
+    animation: moveBar 0.55s ease-in-out 0s;
+}
+
+.barMoving::after {
+    animation: scaleUp 0.8s ease-in-out;
+}
+
+.unclickedMachine {
+    opacity: 0.15;
+}
+
+.disabledMachine:hover {
+    transform: scale(1);
+}
+
+@keyframes scaleUp {
+    0% {
+        transform: translateX(-50%) scale(1);
+    }
+
+    60% {
+        transform: translateX(-50%) scale(1.05);
+    }
+
+    100% {
+        transform: translateX(-50%) scale(1);
+    }
+}
+
+@keyframes moveBar {
+    0% {
+        height: 150%;
+        margin-bottom: 100%;
+    }
+
+    60% {
+        height: calc(15 * var(--slot-size));
+        margin-bottom: 100%;
+    }
+
+    100% {
+        height: 150%;
+        margin-bottom: 100%;
+    }
+}
+
+.slotBar::after {
+    content: "";
+    display: block;
+    background: black;
+    border: calc(3 * var(--slot-size)) white solid;
+    width: calc(25 * var(--slot-size));
+    height: calc(25 * var(--slot-size));
+    position: relative;
+    transform: translateX(-50%);
+    left: 50%;
+    border-radius: calc(50 * var(--slot-size));
+}
+
+.slotLabel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #527EF3;
+    border: calc(3 * var(--slot-size)) white solid;
+    position: absolute;
+    width: calc(100 * var(--slot-size));
+    height: calc(50 * var(--slot-size));
+    border-radius: calc(15 * var(--slot-size));
+    margin-bottom: calc(140 * var(--slot-size));
+    color: white;
+    font-size: calc(35 * var(--slot-size));
+    font-weight: bolder;
+    font-family: sans-serif;
+}
+
+.slotCost {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border: calc(3 * var(--slot-size)) white solid;
+    position: absolute;
+    width: calc(200 * var(--slot-size));
+    height: calc(50 * var(--slot-size));
+    border-radius: calc(15 * var(--slot-size));
+    margin-top: calc(233 * var(--slot-size));
+    color: black;
+    font-size: calc(25 * var(--slot-size));
+    font-weight: 900;
+    font-family: sans-serif;
+    transition: opacity 150ms ease-in-out;
+}
+
+.costText {
+    margin-right: 5px;
+    font-family: HouschkaPro-ExtraBold;
+    color: #595959;
+    font-size: 45px;
+}
+
+.costNumber {
+    filter: drop-shadow(1px 1px 1px rgb(0, 0, 0, 0.7));
+    margin-left: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #F29C1F;
+    font-family: HouschkaPro-ExtraBold;
+    font-size: 45px;
+}
+
+.costNumber::before {
+    background: url(../slotAssets/tokenThing.png) center/contain no-repeat;
+    width: 35px;
+    height: 35px;
+    content: "";
+    display: block;
+    margin-right: 5px;
+    transition: transform 350ms ease-in-out;
+}
+
+.slotMachines {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+}

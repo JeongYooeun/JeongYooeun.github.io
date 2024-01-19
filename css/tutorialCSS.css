@@ -1,0 +1,197 @@
+@font-face {
+    font-family: DeliciousHandrawn-Regular;
+    src: url(../fontAssets/DeliciousHandrawn-Regular.woff2);
+}
+
+.arrowAndExplanation {
+    position: absolute;
+    pointer-events:none;
+    width: 100%;
+    height: 100%;
+}
+
+.arrow {
+    background: url(../slotAssets/newArrow.png) center/contain no-repeat;
+    width: 380px;
+    height: 380px;
+    position: absolute;
+    z-index:400;
+}
+
+.explanation {
+    z-index:500;
+    width: 400px;
+    height: 400px;
+    padding:30px;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    border-radius: 2px;
+    box-shadow: 2px 2px 2px rgb(0, 0, 0, 0.5);
+    position: absolute;
+    background: #f7dd38;
+    line-height: normal;
+    font-family: Study;
+    font-size: 40px;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 20% 100%, 0% 80%);
+}
+
+.explanation::after {
+    display:block;
+    content:"";
+    background: #fae873;
+    width: 95px;
+    height: 95px;
+    position:absolute;
+    bottom:0;
+    left:0;
+    box-shadow: 2px 2px 25px rgb(0, 0, 0, 0.2);
+}
+
+#spinNumberArrow {
+    left: 40px;
+    top: 180px;
+    transform: rotate(70deg) scaleX(-1);
+}
+
+#spinNumberExplanation {
+    left: 0;
+    bottom: 116px;
+}
+
+#tokenNumberArrow {
+    right: -63px;
+    top: 150px;
+    transform: rotate(70deg) scaleX(-1);
+}
+
+#tokenNumberExplanation {
+    right: 0;
+    top: 481px;
+    z-index: 400;
+}
+
+#accumulatedNumberArrow {
+    right: 384px;
+    bottom: 69px;
+    transform: rotate(346deg) scaleX(-1);
+}
+
+#accumulatedNumberExplanation {
+    right: 0;
+    bottom: 0;
+}
+
+#costArrow {
+    right: 274px;
+    bottom: 58px;
+    transform: rotate(250deg);
+}
+
+#costExplanation {
+    right: 0;
+    bottom: -85px;
+}
+
+#rewardArrow {
+    right: 300px;
+    top: 216px;
+    transform: rotate(200deg) scaleY(-1);
+}
+
+#rewardExplanation {
+    right: 0;
+    top: 265px;
+    width: 500px;
+    height: 500px;
+}
+
+.instructionsContainer {
+    font-size:30px;
+    line-height:normal;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+
+.instructionsWelcome {
+    align-self: center;
+    font-weight: bold;
+    font-size:50px;
+}
+
+.instructionsTextImportant {
+    font-weight:bold;
+}
+
+.bodyText {
+    margin-top: 144px;
+    font-size: 35px;
+    padding-bottom: 50px;
+}
+
+.rulesList {
+    padding-top: 20px;
+}
+
+.rulesList li {
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
+.instructionsWarning {
+    font-weight:bold;
+}
+
+#practiceRoundStart {
+    margin-top: 320px;
+    font-size:40px;
+}
+
+#practiceRoundStart p {
+    text-align:center;
+}
+
+.blockStartInstructionsContainer {
+   margin-top:225px
+}
+
+.slightlyBiggerText {
+    font-size:50px;
+    text-align:center;
+}
+
+.postSurveyPrompt {
+    font-size:40px;
+    line-height:normal;
+}
+
+
+
+.gameEndInstructionsContainer .slightlyBiggerText {
+font-weight:bold;
+padding-bottom: 50px;
+}
+
+.gameEndInstructionsContainer {
+    font-size:40px;
+    text-align:center;
+    margin-top:300px;
+}
+
+.gameEndInstructionsContainer p {
+    text-align: center;
+}
+#startBlockButton , #finishGameButton {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.blockStartClickContainer {
+    text-align:center;
+}

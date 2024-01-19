@@ -1,0 +1,103 @@
+* {
+    text-align: left;
+}
+
+#studyTitle {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 70px;
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+.infoLetterContainer {
+    width: 80%;
+    margin: auto;
+    font-size: 1.8em;
+    line-height: normal;
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.sectionContainer {
+    margin-bottom: 20px;
+}
+
+.sectionTitle {
+    font-weight: bold;
+}
+
+.sectionText {
+    font-size: 0.9em;
+}
+
+.consentImportant {
+    font-weight: bold;
+    font-style: italic;
+}
+
+.sectionListContainer {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.sectionListItems {
+    font-size: 0.85em;
+}
+
+.consentFormContainer {
+    width: 100%;
+    margin: auto;
+    font-size: 2em;
+    line-height: normal;
+    margin-top: 50px;
+}
+
+.consentListContainer {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.consentButtonContainer {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+#noConsentButton,
+#consentButton {
+    justify-content: center;
+    align-items: center;
+    min-width: 400px;
+    min-height: 80px;
+    margin: 30px;
+    font-size: 1.1em;
+    box-shadow: 2px 2px 4px rgb(0,0,0,0.7);
+    border: 5px white solid;
+    border-radius: 25px;
+    display: inline-block;
+    transition: all 150ms ease-in-out;
+    text-align: center;
+}
+
+#noConsentButton {
+    background-color: rgb(236,39,0);
+    color: white;
+}
+
+#consentButton {
+    background-color: #527EF3;
+    color: white;
+}
+
+#noConsentButton:hover,
+#consentButton:hover {
+    transform: scale(1.05);
+}
+
+/* Ensuring Button Text Does Not Break */
+#noConsentButton,
+#consentButton {
+    white-space: nowrap;
+}

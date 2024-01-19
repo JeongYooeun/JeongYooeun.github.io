@@ -1,0 +1,740 @@
+/* For Webkit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 12px; /* Adjust the width as needed */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888; /* Adjust the color as needed */
+  border-radius: 6px; /* Optional: Round corners */
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f5f5f5; /* Adjust the color as needed */
+}
+
+:root {
+  --scale:1;
+}
+
+@font-face {
+    font-family: HouschkaPro-Bold;
+    src: url(../fontAssets/HouschkaPro-Bold.woff2);
+  }
+  @font-face {
+    font-family: HouschkaPro-ExtraBold;
+    src: url(../fontAssets/HouschkaPro-ExtraBold.woff2);
+  }
+  @font-face {
+    font-family: HouschkaPro-ExtraBoldItalic;
+    src: url(../fontAssets/HouschkaPro-ExtraBoldItalic.woff2);
+  }
+  @font-face {
+    font-family: HouschkaPro-Light;
+    src: url(../fontAssets/HouschkaPro-Bold.woff2);
+  }
+  @font-face {
+    font-family: HouschkaPro-Medium;
+    src: url(../fontAssets/HouschkaPro-Bold.woff2);
+  }
+  @font-face {
+    font-family: Cyberion;
+    src: url(../fontAssets/Cyberion.woff2);
+  }
+  @font-face {
+    font-family: Study;
+    src: url(../fontAssets/Study.woff2);
+  }
+
+.backgroundIllustrations {
+    position: fixed;
+    background: none;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -100;
+    overflow:hidden;
+}
+
+.backgroundDetail {
+    overflow:visible;
+    width: 20%;
+    height: auto;
+    aspect-ratio:1/1;
+    position: absolute;
+    border-radius: 50% 50%;
+    background: rgb(236,39,0);
+    background: linear-gradient(90deg, rgba(236,39,0,1) 50%, rgba(255,0,206,1) 100%);
+}
+
+.laurelBox {
+    position:absolute;
+    width:50%;
+    height:50%;
+    background: url(../slotAssets/laurelThing.png) center/contain no-repeat;
+    bottom:0;
+    right:0;
+    transform:rotate(-180deg) translate(-20%, -20%);
+    filter:drop-shadow(2px 2px rgb(0,0,0,0.7));
+}
+
+.topLeft {
+    top:0%;
+    left: 0%;
+    transform:translate(-50%, -50%)
+}
+
+
+.topRight {
+    top: 0;
+    right: 0;
+    transform:translate(50%, -50%) scaleX(-1);
+}
+
+.bottomRight {
+    bottom: 0;
+    right: 0;
+    transform:translate(50%, 50%) scaleY(-1) scaleX(-1);
+}
+
+.bottomLeft {
+    bottom: 0;
+    left: 0;
+    transform:translate(-50%, 50%) scaleY(-1);
+} 
+
+
+/* STYLING PRE-EXISTING ELEMENTS */
+
+#roundInfoContainer {
+    font-family: HouschkaPro-ExtraBold;
+}
+
+body {
+  overflow: hidden;
+}
+
+.jspsych-content-wrapper {
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+
+#jspsych-content {
+  width:1920px;
+  height:1080px;
+  min-width:1920px;
+  min-height:1080px;
+  transform:scale(var(--scale));
+  position:absolute;
+  display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.tokenCounter {
+  right:0;
+}
+
+.spinCounter {
+left:0;
+}
+
+.generalCounter {
+  margin-top: 100px;
+  width:fit-content;
+  height:fit-content;
+  top:0;
+  position:absolute;
+  display:flex;
+  align-items: center;
+  filter:drop-shadow(2px 2px 2px rgb(0,0,0,0.7));
+}
+
+.spinCounter {
+  margin-left: 100px;
+  justify-content:flex-start;
+}
+
+.tokenCounter {
+  margin-right: 100px;
+  justify-content:flex-end;
+}
+
+.generalIcon {
+  width:64px;
+  height:64px;
+}
+
+.tokenIcon {
+  background: url(../slotAssets/tokenThing.png) center/contain no-repeat;
+}
+
+.spinIcon {
+  background: url(../slotAssets/spinThing.png) center/contain no-repeat;
+}
+
+.generalCounter .generalNumber {
+  padding-top: 14px; 
+font-size:100px;
+}
+
+.generalCounter .generalIcon {
+  width:100px;
+  height:100px;
+}
+
+.generalNumber {
+  color:white;
+  font-size:74px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:fit-content;
+  height:75px;
+  padding-left:20px;
+  font-family: HouschkaPro-ExtraBold;
+}
+
+.tokenNumber {
+  color:#F29C1F;
+  animation: slightPop 350ms ease-in-out 500ms;
+}
+
+.spinNumber {
+  color:#527EF3;
+  animation: slightPop 350ms ease-in-out 150ms;
+}
+
+.tokenNumberInstruction {
+  color:#F29C1F;
+}
+
+.spinNumberInstruction {
+  color:#527EF3;
+}
+
+.rewardNumber {
+  color:#F29C1F;
+}
+
+.rewardContainer {
+  display:flex;
+  position:absolute;
+  justify-content:center;
+  align-items:center;
+}
+
+.tokenContainer {
+  display:flex;
+  position:absolute;
+  filter: drop-shadow(2px 2px 2px rgb(0,0,0,0.7));
+  transform:scale(0);
+  animation: rewardAppearing 400ms ease-in-out 630ms forwards, moveUp 300ms ease-in-out 1150ms forwards;
+}
+
+.plusSymbol {
+  color:#F29C1F;
+  transform:scale(0);
+  font-family: HouschkaPro-ExtraBold;
+  animation: rewardAppearing 200ms ease-in-out 325ms forwards, moveUpHigh 500ms ease-in-out 650ms forwards;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.plusSymbol::before {
+  position:absolute;
+  display:block;
+  content:"+";
+  font-size:150px;
+  filter:drop-shadow(3px 3px 4px rgb(0,0,0,0.9));
+  animation: scaleDowns 300ms ease-in-out 1500ms forwards;
+}
+
+.plusSymbol::after {
+  position:absolute;
+  display:block;
+  content:"REWARD";
+  font-size:35px;
+  font-size: 39px;
+  padding-bottom: 30px;
+  transform:scale(0);
+  filter:drop-shadow(2px 2px 2px rgb(0,0,0,0.7));
+  animation: scaleUps 300ms ease-in-out 1500ms forwards;
+}
+
+@keyframes pulseEternal {
+  0% {
+    transform:scale(1);
+  }
+  100% {
+    transform:scale(1.10);
+  }
+}
+
+@keyframes scaleDowns {
+  0% {
+    transform:scale(1);
+  }
+  100% {
+    transform:scale(0);
+  }
+}
+
+@keyframes scaleUps {
+  0% {
+    transform:scale(0);
+  }
+  100% {
+    transform:scale(1);
+  }
+}
+
+@keyframes moveUp {
+  0% {
+    margin-bottom:0px;
+  }
+  93% {
+    margin-bottom:310px;
+  }
+  100% {
+    margin-bottom:300px;
+  }
+}
+
+@keyframes moveUpHigh {
+  0% {
+    margin-bottom:0px;
+  }
+  93% {
+    margin-bottom:410px;
+  }
+  100% {
+    margin-bottom:400px;
+  }
+}
+.roundCounter {
+  width:100%;
+  height:300px;
+  height:75px;
+  font-size:54px;
+  font-family: Cyberion;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+#trialPrompt {
+  font-family: Cyberion;
+  font-size:64px;
+  display:flex;
+  justify-content:center;
+  height:fit-content;
+  line-height: normal;
+  transition: opacity 150ms ease-in-out;
+  margin-top: 70px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.accumulatedCounter {
+ /* background:gray;
+  background: url(../slotAssets/silverTexture.jpg) center/cover no-repeat;
+  box-shadow:2px 2px 2px rgb(0,0,0,0.6); */
+  width:500px;
+  height:125px;
+  border-radius:100px;
+  bottom: 110px;
+  position:absolute;
+  left:0; right:0;
+  margin:auto;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+
+.accumulatedPreface {
+  font-size:26px;
+  font-family: Cyberion;
+  color:#303030;
+  padding-top:5px;
+}
+
+.accumulatedWrapper {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  filter:drop-shadow(2px 2px 2px rgb(0,0,0,0.7));
+}
+
+.accumulatedNumber  {
+  color:#F29C1F;
+  font-size:55px;
+  padding-top:6px;
+}
+
+.accumulatedIcon {
+  width:60px;
+  height:60px;
+}
+
+/* spinCounter.classList.add('spinCounter', 'generalCounter');
+  let spinIcon = document.createElement('div');
+  spinIcon.classList.add('spinIcon', 'generalIcon');
+  let spinNumber = document.createElement('div');
+  spinNumber.classList.add('spinNumber', 'generalNumber');
+  spinNumber.id = 'spinNumber'; 
+    --total-points:0;
+  --spins-remaining:0;
+  --tokens-remaining:0;
+  */
+
+  .jspsych-btn:has(.slotMachine) {
+    padding:0px 0px 0px 0px !important;
+    margin-left:10px;
+    margin-right:10px;
+    border:none;
+    background:none !important;
+  }
+
+  #jspsych-survey-html-form-next{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border: 5px white solid;
+    width: 350px;
+    min-height: 125px;
+    bottom: 0;
+    position: relative;
+    align-self: center;
+    background: #527EF3;
+    font-family: Cyberion;
+    font-size: 36px;
+    color: white;
+    box-shadow: 2px 2px 4px rgb(0,0,0,0.7);
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 150ms ease-in-out;
+    text-align: center;
+  }
+
+  .bigButton {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border: 5px white solid;
+    width: 300px;
+    min-height: 100px;
+    height:100px;
+    bottom: 0;
+    position: relative;
+    align-self: center;
+    background: #527EF3;
+    font-family: Cyberion;
+    font-size: 36px;
+    color: white;
+    box-shadow: 2px 2px 4px rgb(0,0,0,0.7);
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 150ms ease-in-out;
+    text-align: center;
+  }
+
+  #nextButton {
+    font-size:36px;
+    transform:scale(0);
+    animation: buttonAppearing 250ms ease-in-out 2350ms forwards;
+  }
+
+  .bigButton:hover , #jspsych-survey-html-form-next:hover {
+    transform:scale(1.05);
+    filter:brightness(1.05);
+  }
+
+  @keyframes buttonAppearing {
+    0% {
+      transform:scale(0);
+    }
+    93% {
+      transform:scale(1.05);
+    }
+    100% {
+      transform:scale(1);
+    }
+
+  }
+
+  @keyframes rewardAppearing {
+    0% {
+      transform:scale(0);
+    }
+    85% {
+      transform:scale(1.10);
+    }
+    100% {
+      transform:scale(1);
+    }
+
+  }
+
+  @keyframes slightPop {
+    0% {
+      transform:scale(1);
+    }
+    50% {
+      transform:scale(1.10);
+    }
+    93% {
+      transform:scale(0.97);
+    }
+    100% {
+      transform:scale(1);
+    }
+  }
+
+  @keyframes bigPopAndRotate {
+    0% {
+      transform:scale(1) rotate(0deg);
+    }
+    50% {
+      transform:scale(1.25) rotate(5deg);
+    }
+    93% {
+      transform:scale(0.97) rotate(-1deg);
+    }
+    100% {
+      transform:scale(1) rotate(0deg);
+    }
+  }
+
+  .rewardElement {
+    position:absolute;
+    width:600px;
+    height:600px;
+    background:yellow;
+  }
+
+  .tokenPop {
+    animation: bigPopAndRotate 450ms ease-in-out;
+  }
+
+  .standardText {
+    font-size:40px;
+  }
+
+  .blockStartInstructionsContainer , .blockStartTextContainer , .gameEndInstructionsContainer {
+    margin-top:400px;
+    line-height:normal;
+  }
+
+  .blockStartInstructionsImportant  {
+    padding-top: 30px;
+    padding-bottom: 50px;
+  }
+
+  .blockStartText {
+    font-family: Cyberion;
+    font-size: 64px;
+    display: flex;
+    justify-content: center;
+    height: fit-content;
+    line-height: normal;
+    text-transform:uppercase;
+    transition: opacity 150ms ease-in-out;
+  }
+
+  .textAndTokenContainer {
+    display:flex;
+  }
+
+  .textbox , #age{
+    padding: 5px;
+    border: 1.5px solid black;
+    font-size: 30px;
+    width: 100%; /* make textboxes full width */
+    box-sizing: border-box; /* padding included in width */
+    margin-top: 5px; /* space above textboxes */
+  }
+
+  #age {
+    width: 50%;
+    height: 50px;
+  }
+
+  #jspsych-survey-html-form {
+    display:flex;
+    flex-direction:column;
+    align-items: flex-start; /* align content to the left */
+      width: 90%;
+      height: 90%;
+      overflow-y: scroll;
+      box-shadow: 2px 2px 15px rgb(0,0,0,0.6);
+      background: #fffdf8;
+      justify-content: flex-start;
+      padding: 50px;
+  }
+
+  .postQuestionsContainer {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: left; /* align text to the left */
+    width: 100%;
+  }
+
+  .postSurveyPrompt {
+    text-align: center; /* align the prompt text to the center */
+    margin-bottom: 20px; /* add space below the prompt */
+  }
+
+  .questions {
+    font-weight: bold; /* make questions bold */
+    margin-bottom: 5px; /* add space below questions */
+    font-size:36px;
+    line-height:normal;
+    padding-bottom: 10px;
+  }
+
+  .options {
+    font-size: 32px;
+    line-height: normal;
+  }
+
+  .options label {
+    display: block; /* each label on a new line */
+    margin-bottom: 5px; /* add space below each option */
+    font-weight: normal; /* options are not bold */
+  }
+
+  input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px; /* add space to the right of the radio button */
+  }
+
+  .exampleList {
+    font-size: 32px;
+    margin-top: 5px;
+    margin-bottom:0px;
+    font-weight: normal;
+  }
+  
+  /* Add custom styles for textboxes */
+  .textbox {
+    border-radius: 4px; /* rounded corners for textboxes */
+    width: 100%;
+    min-height: 100px; /* minimum height for multi-line textboxes */
+    padding: 10px; /* more padding for textboxes */
+    font-size: 30px;
+    border: 1.5px solid black;
+  }
+
+  .instructionsLowOpacity {
+    opacity:0.3;
+  }
+
+  #jspsych-instructions-next {
+    margin-left:20px !important;
+    margin-right:20px !important;
+    margin-top: 50px;
+    border: 5px white solid;
+    width: 350px;
+    height: 100px;
+    background: #527EF3;
+    font-family: Cyberion;
+    font-size:36px;
+    color:white;
+    box-shadow:2px 2px 4px rgb(0,0,0,0.7);
+    border-radius:25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 150ms ease-in-out;
+  }
+
+  #jspsych-instructions-back {
+    margin-left:20px !important;
+    margin-right:20px !important;
+    margin-top: 50px;
+    border: 5px white solid;
+    width: 350px;
+    height: 100px;
+    background: #527EF3;
+    font-family: Cyberion;
+    font-size:36px;
+    color:white;
+    box-shadow:2px 2px 4px rgb(0,0,0,0.7);
+    border-radius:25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 150ms ease-in-out;
+  }
+
+  .jspsych-instructions-nav {
+    display:flex;
+    position:absolute;
+    bottom:0;
+  }
+
+  #jspsych-instructions-back[disabled="disabled"] {
+opacity:0.2;
+  }
+
+  #actualBlockStart {
+    margin-top: 100px;
+  }
+
+  #actualBlockStart .blockStartText {
+    margin-bottom: 145px;
+  }
+
+  #actualBlockStart .blockStartClickContainer {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  #actualBlockStart p {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+
+  #actualBlockStart .textAndTokenContainer {
+    justify-content: center;
+  }
+
+  #actualBlockStart .textAndTokenContainer p {
+    font-size: 50px;
+  }
+
+
+  #actualBlockStart .clickStartText {
+    margin-top:175px;
+}
+
+#actualBlockStart .costNumber {
+  margin-left: 25px;
+}
+
+.ageQuestion {
+  width:40%;
+}
+
+.debriefContainer {
+  font-size: 32px;
+  line-height: normal;
+}
+
+.debriefSectionContainer {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.endingStatement {
+  text-align: center;
+    font-size: 34px;
+    font-weight: bold;
+}
